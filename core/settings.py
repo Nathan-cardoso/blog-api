@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'rest_framework',
+    'rest_framework_simplejwt',
     'drf_spectacular',
 ]
 
@@ -98,6 +99,9 @@ AUTH_USER_MODEL = 'blog.CustomUser'
 
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
 }
 
 SPECTACULAR_SETTINGS = {
